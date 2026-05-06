@@ -17,27 +17,23 @@ public class Kitchen {
         return orders;
     }
 
-    public void addOrder (Order order) {
-        order.setStatus(Status.WAITING);
-        orders.put(order.getId(), order);
-    }
-
-    public void updateStatus(Integer id, Status status) {
+    public Order getOrder (Integer id) {
         Order order = orders.get(id);
-        order.setStatus(status);
+        return order;
     }
 
-    public void makingOrder(Integer id) {
-        updateStatus(id, Status.PROCESSING);
+    public void addOrder (Order order) {
+        orders.put(order.getId(), order);
+        order.setStatus(Status.WAITING);
+    }
+
+    public void processingOrder(Integer id) {
+        getOrder(id).setStatus(Status.PROCESSING);
     }
 
     public void readyOrder(Integer id) {
-       updateStatus(id, Status.READY);
+        getOrder(id).setStatus(Status.READY);
     }
 
-    public void deliveryOrder(Integer id) {
-        updateStatus(id, Status.DELIVERED);
-        orders.remove(id);
-    }
 
 }

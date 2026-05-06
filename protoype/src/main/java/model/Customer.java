@@ -79,7 +79,11 @@ public class Customer{
     }
 
     public void makeOrder (Item item) {
-        order.addItem(item);
+        order.addItem(item);        
+    }
+
+    public void removeOrderItem (Item item) {
+        order.deleteItem(item);
     }
 
     public boolean makePayment (double value) {
@@ -94,6 +98,5 @@ public class Customer{
 
         return true;
     }
-
 
 }

@@ -7,7 +7,7 @@ public class Order {
     private int id;
     private Customer customer;
     private List<Item> order = new ArrayList<>();
-    private Status status = Status.WAITING;
+    private Status status;
     private double totalPrice = 0;
 
     public Order () {}
@@ -17,7 +17,7 @@ public class Order {
         setId(id);
         setOrder(order);
         setCustomer(customer);
-        
+
     }
     
     private void calculateTotalPrice() {
