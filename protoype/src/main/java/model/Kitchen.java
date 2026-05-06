@@ -6,8 +6,6 @@ import java.util.Map;
 public class Kitchen {
 
     private Map<Integer, Order> orders = new LinkedHashMap<>();
-        
-    public Kitchen () {}
 
     public void setOrders(Map<Integer, Order> orders) {
         this.orders = orders;
@@ -39,6 +37,5 @@ public class Kitchen {
         getOrder(id).setStatus(Status.DELIVERED);
         orders.remove(id);
     }
-
 
 }

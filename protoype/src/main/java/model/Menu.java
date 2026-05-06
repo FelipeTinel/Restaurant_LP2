@@ -23,8 +23,8 @@ public class Menu {
         menu.remove(id);
     }
 
-    public void getItem (Integer id) {
-        menu.get(id);
+    public Item getItem (Integer id) {
+        return menu.get(id);
     }
 
 }

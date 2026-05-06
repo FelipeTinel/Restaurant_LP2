@@ -9,14 +9,13 @@ public class Order {
     private List<Item> order = new ArrayList<>();
     private Status status;
     private double totalPrice = 0;
-
-    public Order () {}
     
     public Order (int id, Customer customer, List<Item> order, Status status) {
         
         setId(id);
         setOrder(order);
         setCustomer(customer);
+        setStatus(status);
 
     }
     
@@ -25,7 +24,6 @@ public class Order {
         for (Item item : order) {
             totalPrice += item.getPrice();
         }
-        totalPrice -= customer.getBonus();
     }
 
     public void setId(int id) {
@@ -75,5 +73,9 @@ public class Order {
         calculateTotalPrice();
     }
 
+    public double finishOrder() {
+        double value = getTotalPrice() - customer.getBonus();
+        return value;
+    }
 
 }
