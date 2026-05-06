@@ -20,5 +20,12 @@ public class Menu {
         return menu;
     }
 
-    
+    public void addItem (Item item) {
+        menu.add(item);
+    }
+
+    public void removeItem (Item item) {
+        menu.remove(item);
+    }
+
 }

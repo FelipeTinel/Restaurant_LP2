@@ -1,23 +1,24 @@
 package model;
 
-public class Costumer{
+public class Customer{
 
     private int id;
     private String name, email, cpf;
-    private double bonus;
+    private double bonus = 0;
     private Payment payment;
+    private Order order;
 
-    Costumer () {};
+    public Customer () {};
 
-    Costumer (int id, String name, String email, String cpf, Payment payment) {
+    public Customer (int id, String name, String email, String cpf, Payment payment, Order order) {
 
         setId(id);
         setName(name);
         setEmail(email);
         setCpf(cpf);
-        setBonus(0);
         setPayment(payment);
-    
+        setOrder(order);
+
     }
 
     
@@ -37,12 +38,12 @@ public class Costumer{
         this.cpf = cpf;
     }
 
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
-    }
-
     public void setPayment(Payment payment) {
         this.payment = payment;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public int getId() {
@@ -69,10 +70,29 @@ public class Costumer{
         return cpf;
     }
 
-    public boolean makePayment (double value) {
+    public Order getOrder() {
+        return order;
+    }
 
+    private void calculateBonus (double value) {
+        bonus = value * 0.1;
+    }
+
+    public void makeOrder (Item item) {
+        order.addItem(item);
+    }
+
+    public boolean makePayment (double value) {
+        
+        double finalPayment = order.getTotalPrice() - bonus;
+        
+        if (value < finalPayment)
+            throw new IllegalArgumentException("Invalid payment");
         
 
+        calculateBonus(value);
+
+        return true;
     }
 
 

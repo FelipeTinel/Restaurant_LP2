@@ -25,6 +25,8 @@ public class Item {
     }
 
     public void setPrice(double price) {
+        if (price < 0)
+            throw new IllegalArgumentException("Error: Invalid price");
         this.price = price;
     }
 
