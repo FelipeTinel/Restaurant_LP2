@@ -5,6 +5,6 @@ public enum Status {
     WAITING,
     PROCESSING,
     READY,
-    DELIVERED
+    DELIVERED;
 
 }

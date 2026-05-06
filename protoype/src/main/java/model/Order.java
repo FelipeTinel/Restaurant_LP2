@@ -7,14 +7,10 @@ public class Order {
     private int id;
     private Customer customer;
     private List<Item> order = new ArrayList<>();
-    private Status status;
+    private Status status = Status.WAITING;
     private double totalPrice = 0;
 
-    public Order () {
-
-        setStatus(WAITING);
-
-    }
+    public Order () {}
     
     public Order (int id, Customer customer, List<Item> order, Status status) {
         
