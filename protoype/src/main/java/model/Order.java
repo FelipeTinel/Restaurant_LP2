@@ -9,9 +9,9 @@ public class Order {
     private List<Item> order = new ArrayList<>();
     private double totalPrice = 0;
 
-    Order () {}
+    public Order () {}
     
-    Order (int id, Customer customer, List<Item> order) {
+    public Order (int id, Customer customer, List<Item> order) {
         
         setId(id);
         setOrder(order);
@@ -20,6 +20,7 @@ public class Order {
     }
     
     private void calculateTotalPrice() {
+        totalPrice = 0;
         for (Item item : order) {
             totalPrice += item.getPrice();
         }
@@ -32,10 +33,6 @@ public class Order {
     public void setOrder(List<Item> order) {
         calculateTotalPrice();
         this.order = order;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
     }
 
     public void setCustomer(Customer customer) {
@@ -59,13 +56,13 @@ public class Order {
     }
 
     public void addItem(Item item) {
-        order.add(item);
         calculateTotalPrice();
+        order.add(item);
     }
 
     public void deleteItem(Item item) {
-        order.remove(item);
         calculateTotalPrice();
+        order.remove(item);
     }
 
 
