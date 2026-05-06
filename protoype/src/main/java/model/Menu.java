@@ -6,7 +6,7 @@ public class Menu {
 
     private List<Item> menu;
 
-    Menu () {
+    public Menu () {
 
      menu = new ArrayList<>();
 

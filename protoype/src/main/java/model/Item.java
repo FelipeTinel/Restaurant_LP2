@@ -6,9 +6,9 @@ public class Item {
     private String name;
     private double price;
 
-    Item () {};
+    public Item () {};
 
-    Item (int id, String name, double price) {
+    public Item (int id, String name, double price) {
 
         setId(id);
         setName(name);

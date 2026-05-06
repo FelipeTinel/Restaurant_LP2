@@ -7,11 +7,16 @@ public class Order {
     private int id;
     private Customer customer;
     private List<Item> order = new ArrayList<>();
+    private Status status;
     private double totalPrice = 0;
 
-    public Order () {}
+    public Order () {
+
+        setStatus(WAITING);
+
+    }
     
-    public Order (int id, Customer customer, List<Item> order) {
+    public Order (int id, Customer customer, List<Item> order, Status status) {
         
         setId(id);
         setOrder(order);
@@ -39,6 +44,10 @@ public class Order {
         this.customer = customer;
     }
 
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     public int getId() {
         return id;
     }
@@ -53,6 +62,10 @@ public class Order {
 
     public Customer getCustomer() {
         return customer;
+    }
+
+    public Status getStatus() {
+        return status;
     }
 
     public void addItem(Item item) {
