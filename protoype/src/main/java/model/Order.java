@@ -25,6 +25,7 @@ public class Order {
         for (Item item : order) {
             totalPrice += item.getPrice();
         }
+        totalPrice -= customer.getBonus();
     }
 
     public void setId(int id) {

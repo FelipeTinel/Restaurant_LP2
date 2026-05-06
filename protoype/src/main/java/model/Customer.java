@@ -88,14 +88,13 @@ public class Customer{
 
     public boolean makePayment (double value) {
         
-        double finalPayment = order.getTotalPrice() - bonus;
-        
-        if (value < finalPayment)
+        double orderValue = order.getTotalPrice();
+
+        if (value < orderValue)
             throw new IllegalArgumentException("Invalid payment");
         
 
         calculateBonus(value);
-
         return true;
     }
 
