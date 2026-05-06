@@ -69,6 +69,11 @@ public class Costumer{
         return cpf;
     }
 
+    public boolean makePayment (double value) {
+
+        
+
+    }
 
 
 }
