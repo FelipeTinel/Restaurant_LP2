@@ -31,8 +31,8 @@ public class Order {
     }
 
     public void setOrder(List<Item> order) {
-        calculateTotalPrice();
         this.order = order;
+        calculateTotalPrice();
     }
 
     public void setCustomer(Customer customer) {
@@ -56,13 +56,13 @@ public class Order {
     }
 
     public void addItem(Item item) {
-        calculateTotalPrice();
         order.add(item);
+        calculateTotalPrice();
     }
 
     public void deleteItem(Item item) {
-        calculateTotalPrice();
         order.remove(item);
+        calculateTotalPrice();
     }
 
 
