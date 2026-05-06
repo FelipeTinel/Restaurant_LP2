@@ -1,31 +1,30 @@
 package model;
-import java.util.List;
-import java.util.ArrayList;
+
+import java.util.Map;
+import java.util.LinkedHashMap;
 
 public class Menu {
 
-    private List<Item> menu;
+    private Map<Integer, Item> menu = new LinkedHashMap<>();
 
-    public Menu () {
-
-     menu = new ArrayList<>();
-
-    }
-
-    public void setMenu(List<Item> menu) {
+    public void setMenu(Map<Integer, Item> menu) {
         this.menu = menu;
     }
 
-    public List<Item> getMenu() {
+    public Map<Integer, Item> getMenu() {
         return menu;
     }
 
-    public void addItem (Item item) {
-        menu.add(item);
+    public void addItem (Integer id, Item item) {
+        menu.put(id, item);
     }
 
-    public void removeItem (Item item) {
-        menu.remove(item);
+    public void removeItem (Integer id) {
+        menu.remove(id);
+    }
+
+    public void getItem (Integer id) {
+        menu.get(id);
     }
 
 }
