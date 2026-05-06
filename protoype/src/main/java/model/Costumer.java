@@ -1,6 +1,6 @@
 package model;
 
-public class Costumer implements Payment{
+public class Costumer{
 
     private int id;
     private String name, email, cpf;
@@ -56,18 +56,6 @@ public class Costumer implements Payment{
 
     public String getCpf() {
         return cpf;
-    }
-
-    @Override
-    public void makePayment() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public double calculateBonus() {
-        // TODO Auto-generated method stub
-        return 0;
     }
 
 
