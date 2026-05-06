@@ -5,15 +5,17 @@ import java.util.List;
 public class Order {
 
     private int id;
+    private Customer customer;
     private List<Item> order = new ArrayList<>();
     private double totalPrice = 0;
 
     Order () {}
     
-    Order (int id, List<Item> order, double totalPrice) {
+    Order (int id, Customer customer, List<Item> order) {
         
         setId(id);
         setOrder(order);
+        setCustomer(customer);
         
     }
     
@@ -36,6 +38,10 @@ public class Order {
         this.totalPrice = totalPrice;
     }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
     public int getId() {
         return id;
     }
@@ -46,6 +52,10 @@ public class Order {
 
     public double getTotalPrice() {
         return totalPrice;
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 
     public void addItem(Item item) {
