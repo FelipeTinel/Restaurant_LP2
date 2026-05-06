@@ -5,12 +5,14 @@ public class Item {
     private int id;
     private String name;
     private double price;
+    private ItemType type;
 
-    public Item (int id, String name, double price) {
+    public Item (int id, String name, double price, ItemType type) {
 
         setId(id);
         setName(name);
         setPrice(price);
+        setType(type);
 
     }
 
@@ -28,6 +30,10 @@ public class Item {
         this.price = price;
     }
 
+    public void setType(ItemType type) {
+        this.type = type;
+    }
+
     public int getId() {
         return id;
     }
@@ -38,6 +44,10 @@ public class Item {
 
     public double getPrice() {
         return price;
+    }
+
+    public ItemType getType() {
+        return type;
     }
 
 }
