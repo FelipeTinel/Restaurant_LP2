@@ -35,5 +35,10 @@ public class Kitchen {
         getOrder(id).setStatus(Status.READY);
     }
 
+    public void deliveredOrder(Integer id) {
+        getOrder(id).setStatus(Status.DELIVERED);
+        orders.remove(id);
+    }
+
 
 }
